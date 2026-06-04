@@ -11,6 +11,12 @@ PS C:\Tools>Windows.Media.Ocr.Cli.exe .\x.png
 9·哪位科学家发现了电磁感应现象？
 PS C:\Tools>Windows.Media.Ocr.Cli.exe -o .\res.txt .\x.png
 -> 将内容输出到res.txt中
+PS C:\Tools>Windows.Media.Ocr.Cli.exe -c
+-> 从剪贴板读取图片进行识别，并将识别结果写回剪贴板
+PS C:\Tools>Windows.Media.Ocr.Cli.exe -c -n
+-> 从剪贴板读取图片进行识别，并在完成后显示右下角提示
+PS C:\Tools>Windows.Media.Ocr.Cli.exe -c -n -nt 3000
+-> 从剪贴板读取图片进行识别，并显示 3 秒右下角提示
 ```
 ![x-out.png](https://github.com/zh-h/Windows.Media.Ocr.Cli/blob/master/Windows.Media.Ocr.Cli/x-out.png?raw=true)
 
@@ -21,6 +27,9 @@ Usage: Windows.Media.Ocr.Cli.exe [options...] <image file path>
 Example: Windows.Media.Ocr.Cli.exe -o c:\res.txt x.png
 -l      <language>  Default:zh-Hans-CN   Specify language to reconizing
 -o      <output_path> Output the resalut to a file, It should end with a file name, such as res.txt.
+-c      Recognize image from clipboard and write result text back to clipboard
+-n      Show a Windows notification after OCR completes
+-nt     <milliseconds> Notification duration in milliseconds. Default:5000
 -s      Show all supported languages
 -h      Show help like this
 ```
