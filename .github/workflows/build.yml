@@ -1,0 +1,37 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - master
+    tags:
+      - "v*"
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-2022
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup NuGet
+        uses: NuGet/setup-nuget@v2
+
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v2
+
+      - name: Restore packages
+        run: nuget restore Windows.Media.Ocr.Cli.sln
+
+      - name: Build Release
+        run: msbuild Windows.Media.Ocr.Cli.sln /t:Build /p:Configuration=Release /m
+
+      - name: Upload Release artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Windows.Media.Ocr.Cli-Release
+          path: Windows.Media.Ocr.Cli/bin/Release/
+          if-no-files-found: error
