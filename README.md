@@ -1,9 +1,11 @@
-# [Windows.Media.Ocr.Cli]( https://github.com/zh-h/Windows.Media.Ocr.Cli)
+# [Windows.Media.Ocr.Cli](https://github.com/benzBrake/Windows.Media.Ocr.Cli)
 Ocr 命令行工具， **本地调用** UWP API Windows.Media.Ocr 支持多种语言识别。
 
 ## 使用
 ### 下载
-https://github.com/zh-h/Windows.Media.Ocr.Cli/releases
+https://github.com/benzBrake/Windows.Media.Ocr.Cli/releases
+
+从 Release 页面下载 `Windows.Media.Ocr.Cli-vX.Y.Z.zip` 并解压即可使用。发布包中除 `Windows.Media.Ocr.Cli.exe` 外的文件均非运行必需，日常使用可以只保留该 exe 文件。
 
 ### 命令行执行
 ```powershell
@@ -18,7 +20,7 @@ PS C:\Tools>Windows.Media.Ocr.Cli.exe -c -n
 PS C:\Tools>Windows.Media.Ocr.Cli.exe -c -n -nt 3000
 -> 从剪贴板读取图片进行识别，并显示 3 秒右下角提示
 ```
-![x-out.png](https://github.com/zh-h/Windows.Media.Ocr.Cli/blob/master/Windows.Media.Ocr.Cli/x-out.png?raw=true)
+![x-out.png](https://github.com/benzBrake/Windows.Media.Ocr.Cli/blob/master/Windows.Media.Ocr.Cli/x-out.png?raw=true)
 
 ### 查看帮助
 ```powershell
